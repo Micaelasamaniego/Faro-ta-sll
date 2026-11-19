@@ -49,10 +49,12 @@ rango = st.sidebar.slider("Precio por m² (USD)", pmin, pmax, (pmin, pmax))
 min_anuncios = st.sidebar.slider("Mínimo de anuncios por sector", 1, 30, 5)
 
 # >>> RETO 1 · PARTE A: si tu reto es el 1, pega aquí el filtro nuevo
+banos = st.sidebar.slider("Baños (mínimo)", 0, 5, 0)
 
 filtrado = anuncios[anuncios["tipo"].isin(tipo_elegido) & anuncios["precio_m2"].between(rango[0], rango[1])]
 
 # >>> RETO 1 · PARTE B: si tu reto es el 1, pega aquí la línea que aplica el filtro
+filtrado = filtrado[filtrado["banos"] >= banos]
 
 st.sidebar.write(f"**{len(filtrado):,}** anuncios con estos filtros")
 
