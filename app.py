@@ -88,3 +88,59 @@ with pestana2:
 pestana3.write("Esta pestaña es para tu reto si es el 3, el 4 o el 5.")
 
 # >>> RETO 3, 4 y 5: si tu reto es el 3, el 4 o el 5, pega aquí el bloque de tu reto (solo uno)
+RETO 1 · Un filtro nuevo
+======================================================================
+ESTE ES EL ARCHIVO DE:
+  - Diana Brigette Andrade Barahona
+  - Mateo Alejandro Murgueitio Cadena
+  - Micaela Zarahi Samaniego Viera
+(Si tu nombre no aparece aquí, abre el archivo con el número que sale junto a tu nombre en LEEME.txt o en la guía. Cada persona usa SOLO su archivo.)
+
+CONCEPTO: Un filtro recorta la tabla ANTES de calcular
+======================================================================
+
+PASO 1 · COPIA el código de tu reto
+Con el mouse selecciona SOLO las líneas de código que están entre las líneas «COPIA DESDE AQUÍ» y «HASTA AQUÍ» (sin incluir esas dos líneas) y copia con Ctrl+C.
+
+PARTE A  (se pega en el marcador «RETO 1 · PARTE A»)
+vvvvvvvvvv COPIA DESDE AQUÍ (empieza en la línea de abajo) vvvvvvvvvv
+banos = st.sidebar.slider("Baños (mínimo)", 0, 5, 0)
+^^^^^^^^^^ HASTA AQUÍ (termina en la línea de arriba) ^^^^^^^^^^
+
+PARTE B  (se pega en el marcador «RETO 1 · PARTE B»)
+vvvvvvvvvv COPIA DESDE AQUÍ (empieza en la línea de abajo) vvvvvvvvvv
+filtrado = filtrado[filtrado["banos"] >= banos]
+^^^^^^^^^^ HASTA AQUÍ (termina en la línea de arriba) ^^^^^^^^^^
+
+PASO 2 · PEGA en app.py, DEBAJO del marcador
+El marcador es una línea de app.py que empieza con «# >>> RETO». Es solo un cartel que dice dónde pegar; Python la ignora.
+Tu marcador: «# >>> RETO 1 · PARTE A»  (línea 51) y «# >>> RETO 1 · PARTE B»  (línea 55)
+Cómo llegar: En el editor de GitHub pulsa Ctrl+F y escribe: RETO 1   (verás dos marcadores: PARTE A y PARTE B).
+Cómo pegar: haz clic sobre la línea del marcador, pulsa la tecla Fin (End), pulsa Enter y pega con Ctrl+V. No borres el marcador.
+Como son dos partes, haz lo mismo dos veces: la PARTE A en su marcador y la PARTE B en el suyo.
+El código pegado debe quedar pegado al borde izquierdo (sin espacios antes del primer renglón). Los renglones que ya traen sangría se pegan tal cual.
+
+ASÍ DEBE QUEDAR (las flechas <== son explicaciones, NO las copies):
+
+  49  min_anuncios = st.sidebar.slider("Mínimo de anuncios por sector", 1, 30, 5)
+  50  
+  51  # >>> RETO 1 · PARTE A: si tu reto es el 1, pega aquí el filtro nuevo      <== el marcador (NO lo borres)
+  52  banos = st.sidebar.slider("Baños (mínimo)", 0, 5, 0)      <== LO QUE PEGAS (línea 52)
+  53  
+  54  filtrado = anuncios[anuncios["tipo"].isin(tipo_elegido) & anuncios["precio_m2"].between(rango[0], rango[1])]
+  55  
+  56  # >>> RETO 1 · PARTE B: si tu reto es el 1, pega aquí la línea que aplica el filtro      <== el marcador (NO lo borres)
+  57  filtrado = filtrado[filtrado["banos"] >= banos]      <== LO QUE PEGAS (línea 57)
+  58  
+  59  st.sidebar.write(f"**{len(filtrado):,}** anuncios con estos filtros")
+
+(Los números de la izquierda son los números de línea que verás en el editor de GitHub. Las líneas sin flecha ya estaban en app.py.)
+Ojo: al pegar la PARTE A, todo lo de abajo baja una línea; por eso el marcador de la PARTE B pasa de la línea 55 a la 56.
+
+PASO 3 · GUARDA en GitHub
+Botón verde «Commit changes…», mensaje: S11: reto 1  y botón «Commit changes».
+
+----------------------------------------------------------------------
+QUÉ ANOTAS (para tu informe): Pon el filtro en 3 baños y anota qué le pasa a la tarjeta «Anuncios» y a la «Mediana USD por m²».
+
+PREGUNTA DE TU INFORME: Explica con tus palabras por qué las tarjetas cambian cuando mueves el filtro de baños. ¿Qué parte del código recorta la tabla y en qué orden ocurre frente al cálculo de la mediana?
